@@ -1,3 +1,5 @@
+import logging
+
 class Machine:
     def __init__(self, name, os, cpu, ram):
         self.name = name
@@ -12,14 +14,13 @@ class Machine:
             "cpu": self.cpu,
             "ram": self.ram
         }
-import logging
 
 def setup_logging():
     logging.basicConfig(
-        fileName = 'logs/provisioning.log',
+        filename = 'logs/provisioning.log',
         level = logging.INFO,
         format = '%(asctime)s - %(levelname)s - %(message)s'
     )
-    return logging.getlogger()
+    return logging.getLogger()
 
 logger = setup_logging()
